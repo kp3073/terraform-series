@@ -27,3 +27,13 @@ variable "enable_ip" {
   type = bool
   default = true
 }
+
+resource "aws_iam_user" "name" {
+  count = length(var.username)
+  name = var.username[count.index]
+}
+
+variable "username" {
+  type = list(string)
+  default = ["user1" , "user2", "user3"]
+}
