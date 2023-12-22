@@ -1,7 +1,6 @@
 
 resource "aws_instance" "web" {
   ami = "ami-03265a0778a880afb"
-  region     = "us-east-1"
   instance_type = var.instance_type
   count = var.count2
 
