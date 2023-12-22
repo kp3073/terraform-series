@@ -17,7 +17,7 @@ variable "instance_type"{
 variable "count2" {
   description = "number of instance"
   type = number
-  default = 2
+  default = 1
 }
 
 variable "enable_ip" {
