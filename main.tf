@@ -11,7 +11,7 @@ resource "aws_instance" "web" {
 variable "instance_type"{
   description = "instance type"
   type = string
-  default = "t3.medium"
+  default = "t3.micro"
 }
 
 variable "count2" {
