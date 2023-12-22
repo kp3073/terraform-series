@@ -25,4 +25,3 @@ variable "count2" {
   type = number
   default = 2
 }
-~
