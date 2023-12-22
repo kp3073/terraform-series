@@ -5,9 +5,7 @@ resource "aws_instance" "web" {
   count = var.count2
   associate_public_ip_address = var.enable_ip
 
-  tags = {
-    Name = "terraform"
-  }
+  tags = var.tagss
 }
 
 variable "instance_type"{
@@ -36,4 +34,12 @@ resource "aws_iam_user" "name" {
 variable "username" {
   type = list(string)
   default = ["user1" , "user2", "user3"]
+}
+
+variable "tagss" {
+  type = map(string)
+  default = {
+    enviroment = "dev"
+    project = "alpha"
+  }
 }
