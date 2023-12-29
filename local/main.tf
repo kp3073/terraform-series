@@ -20,7 +20,7 @@ resource "aws_subnet" "staging-subnet" {
 
 resource "aws_instance" "ec2_example" {
 
-  ami           = "ami-0767046d1677be5a0"
+  ami           = "ami-03265a0778a880afb"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.staging-subnet.id
 
