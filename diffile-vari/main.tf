@@ -6,3 +6,7 @@ resource "aws_instance" "web" {
     Name = var.tagss
   }
 }
+
+output "ip" {
+  value = aws_instance.web.public_ip
+}
