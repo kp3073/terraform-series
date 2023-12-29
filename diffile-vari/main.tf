@@ -7,6 +7,8 @@ resource "aws_instance" "web" {
   }
 }
 
+}
 output "ip" {
   value = aws_instance.web.private_ip
+  sensitive = true
 }
