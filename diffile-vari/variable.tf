@@ -2,4 +2,6 @@ variable "instance_type" {
 
 }
 
-variable "tagss" {}
+variable "tagss" {
+
+}
