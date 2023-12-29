@@ -28,3 +28,7 @@ resource "aws_instance" "ec2_example" {
     Name = "${local.enviroment} - Terraform EC2"
   }
 }
+
+output "ip" {
+  value = aws_instance.ec2_example.public_ip
+}
