@@ -10,14 +10,14 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_iam_user" "username" {
-  count = length(var.example)
-  name = var.example[count.index]
+resource "aws_iam_user" "forloop" {
+  for_each = var.username
+  name = each.value
 }
 
-variable "example" {
-  type = list(string)
-  default = ["user1","user2","user3"]
+variable "username" {
+  type = set(string)
+  default = ["user1", "user2","user3"]
 }
 
 variable "instance_type" {
