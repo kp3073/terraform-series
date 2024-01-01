@@ -10,22 +10,17 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_iam_user" "forloop" {
-  for_each = var.username
+resource "aws_iam_user" "example" {
+  for_each = var.forloop
   name = each.value
 }
 
-variable "username" {
+variable "forloop" {
   type = set(string)
-  default = ["user1", "user2","user3"]
+  default = ["user1", "user2"]
 }
 
 variable "instance_type" {
+  type = string
   default = "t2.small"
-}
-
-
-output "ip" {
-  value = aws_instance.web.private_ip
-  sensitive = true
 }
